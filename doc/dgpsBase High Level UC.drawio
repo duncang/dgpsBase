@@ -1,41 +1,113 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="kiN15WO4t5AedQ5-rukK">
-    <mxGraphModel dx="964" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1483" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="RfqKmmUcTYStfmsyTsOJ-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Genrate RTCA DO-217A DGPS Correction" vertex="1">
-          <mxGeometry height="70" width="140" x="390" y="300" as="geometry" />
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Generate RTCA DO-217A DGPS Correction" vertex="1">
+          <mxGeometry height="70" width="140" x="372" y="320" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Base Station Receiver(s)" vertex="1">
-          <mxGeometry height="60" width="30" x="160" y="200" as="geometry" />
-        </mxCell>
-        <mxCell id="RfqKmmUcTYStfmsyTsOJ-4" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-2" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="RfqKmmUcTYStfmsyTsOJ-1" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="250" y="130" as="sourcePoint" />
-            <mxPoint x="490" y="330" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="RfqKmmUcTYStfmsyTsOJ-5" connectable="0" parent="RfqKmmUcTYStfmsyTsOJ-4" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" value="parent" vertex="1">
-          <mxGeometry relative="1" x="-1" as="geometry" />
-        </mxCell>
-        <mxCell id="RfqKmmUcTYStfmsyTsOJ-6" connectable="0" parent="RfqKmmUcTYStfmsyTsOJ-4" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" value="child" vertex="1">
-          <mxGeometry relative="1" x="1" as="geometry" />
+          <mxGeometry height="60" width="30" x="262" y="295" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-7" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Rover Station" vertex="1">
-          <mxGeometry height="60" width="30" x="670" y="300" as="geometry" />
+          <mxGeometry height="60" width="30" x="722" y="544" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Configure via Socket" vertex="1">
-          <mxGeometry height="70" width="140" x="320" y="90" as="geometry" />
+          <mxGeometry height="70" width="140" x="432" y="150" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Configure via File" vertex="1">
-          <mxGeometry height="70" width="140" x="160" y="80" as="geometry" />
+          <mxGeometry height="70" width="140" x="286" y="165" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Configure via Application Arguments" vertex="1">
-          <mxGeometry height="70" width="140" x="250" y="10" as="geometry" />
+          <mxGeometry height="70" width="140" x="402" y="70" as="geometry" />
         </mxCell>
         <mxCell id="RfqKmmUcTYStfmsyTsOJ-11" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="DGPS Reference&amp;nbsp;&lt;div&gt;Station Operator&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="30" x="50" y="20" as="geometry" />
+          <mxGeometry height="60" width="30" x="232" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-14" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Datalink Bearer" vertex="1">
+          <mxGeometry height="60" width="30" x="572" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-15" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="ROS Infrastructure" vertex="1">
+          <mxGeometry height="60" width="30" x="550" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Provide Correction Integrity Assurance" vertex="1">
+          <mxGeometry height="70" width="140" x="372" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-17" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=330;height=20;connectable=0;" value="dgpsBase High Level UC" vertex="1">
+          <mxGeometry height="650" width="1060" x="2" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-19" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Base Station Support&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;The application should support a wide variety of base stations that are providing data into the database.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;There should therefore be some abstraction of the individual base station characteristics to a generic interface.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Base stations may be low cost units such as uBlox or high end survey grade units such as Novatel.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="270" width="180" x="12" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-20" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-2" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="442" y="360" as="sourcePoint" />
+            <mxPoint x="492" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-21" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-8" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="442" y="360" as="sourcePoint" />
+            <mxPoint x="762" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-23" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-10" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="442" y="360" as="sourcePoint" />
+            <mxPoint x="312" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-25" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-9" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="442" y="360" as="sourcePoint" />
+            <mxPoint x="772" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-26" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Configurability&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;The application should support configuration via multiple interfaces.&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Basic configuration via a text file (or file database such as SQLite) enables stand-alone static operation.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Real-time configuration via a socket interface enables dynamic and development operations.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="245" width="180" x="12" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-27" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-16" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-1" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="502" y="400" as="sourcePoint" />
+            <mxPoint x="552" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-28" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Publish to ROS Container" vertex="1">
+          <mxGeometry height="70" width="140" x="617" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Read from ROS Container" vertex="1">
+          <mxGeometry height="70" width="140" x="617" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-31" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-14" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="662" y="530" as="sourcePoint" />
+            <mxPoint x="552" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-32" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-1" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-28" value="&amp;lt;&amp;lt;includes&amp;gt;&amp;gt;">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="532" y="480" as="sourcePoint" />
+            <mxPoint x="582" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-33" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-15" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="552" y="500" as="sourcePoint" />
+            <mxPoint x="602" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-34" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-15" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-29" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="552" y="500" as="sourcePoint" />
+            <mxPoint x="602" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RfqKmmUcTYStfmsyTsOJ-35" edge="1" parent="1" source="RfqKmmUcTYStfmsyTsOJ-14" style="endArrow=none;html=1;rounded=0;" target="RfqKmmUcTYStfmsyTsOJ-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="772" y="490" as="sourcePoint" />
+            <mxPoint x="822" y="440" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
