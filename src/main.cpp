@@ -7,6 +7,8 @@ int main (int argc, char argv**)
 {
     // process arguments
 
+    // setup logging
+
 
     // load and process configuration
 

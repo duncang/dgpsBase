@@ -2,6 +2,8 @@
 
 DGPS Base Station Processor
 
+Developed by Duncan Greer <duncangreer@gmail.com>
+
 Overview
 
 This application processes raw measurements from at least one GPS reference station receivers and produces DGPS corrections.
@@ -16,9 +18,13 @@ Scope
 
 Requirements
 
+ROS Connections
+
 The application shall read raw measurement data from a ROS container.
 
 The application shall publish correction data to a ROS container.
+
+DPGS Correction Update Rate
 
 The application shall publish corrections at a minimum rate of 1 Hz when valid correction data is available for processing.
 
@@ -46,6 +52,36 @@ The application shall accept program arguments for selection of the configuratio
 
 The application shall accept program arguments for enabling of the control socket interface.
 
+The application shall log application execution information using the log4cxx framework. 
+
+
+DGPS Correction Generation
+
+The application shall generate pseudorange corrections.
+
+The application shall generate pseodurange rate corrections.
+
+The application shall generate valid corrections through end of week rollover events.
+
+
+Multipath Detection
+
+The application shall detect if raw measurements are affected by excessive multipath error.
+
+Integrity Checking
+
+The application shall perform integrity checks on raw measurement data.
+
+The application shall perform integrity checks on broadcast ephemeris data.
+
+
+
+Unit Testing 
+
+Applicastion unit tests shall be generated using the cppUnit framework. 
+
+
+Integration Testing
 
 
 
