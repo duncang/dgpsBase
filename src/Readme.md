@@ -32,6 +32,20 @@ The probability of the application publishing erroneous correction data shall be
 
 The application shall generate all correction parameters required to broadcast correction data in accordance with RTCA DO-217A Type 1.
 
+The application shall accept POSIX signals for shutdown control.
+
+The application shall enable application control via a UDP socket interface (called the "control socket interface"). 
+
+The application shall be configurable via a configuration file.
+
+The application configuration file shall be in [TBD - JSON vs XML vs YAML format].
+
+The application configuration shall be updatable at runtime via the application control socket interface. 
+
+The application shall accept program arguments for selection of the configuration file.
+
+The application shall accept program arguments for enabling of the control socket interface.
+
 
 
 

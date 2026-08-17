@@ -5,12 +5,27 @@
 
 int main (int argc, char argv**)
 {
+    // process arguments
 
-    // 
+
+    // load and process configuration
 
 
-    // setup dgpsBase Constructor
+    // setup signal handling
 
-    
+
+    // setup control API
+
+
+    // setup ROS connection
+
+
+    // setup dgpsBase Constructor and pass ROS connection
+
+
+    // run application main thread
+
+
+    // tear down and gracefully exit    
 
 }
