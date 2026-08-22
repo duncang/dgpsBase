@@ -8,5 +8,5 @@ class dgpsBase
 
 
     private:
-    mainTask();
-}
+    void mainTask();
+};

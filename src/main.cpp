@@ -3,7 +3,7 @@
 
 
 
-int main (int argc, char argv**)
+int main (int argc, char **argv)
 {
     // process arguments
 
@@ -30,4 +30,5 @@ int main (int argc, char argv**)
 
     // tear down and gracefully exit    
 
+    return 0;
 }
