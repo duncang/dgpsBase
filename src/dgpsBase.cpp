@@ -17,6 +17,9 @@ dgpsBase::dgpsBase()
     catch (std::exception& e)
     {
         std::cerr << "Exception in dgpsBase constructor: " << e.what() << std::endl;
+
+        //delete _serialPort;
+        delete _ioContext;
     }
 }
 
