@@ -5,6 +5,9 @@
 
 int main (int argc, char **argv)
 {
+    // 
+    std::cout << "Starting dgpsBase application..." << std::endl;
+
     // process arguments
 
     // setup logging
@@ -23,12 +26,12 @@ int main (int argc, char **argv)
 
 
     // setup dgpsBase Constructor and pass ROS connection
-
+    dgpsBase _dgpsBase;
 
     // run application main thread
 
 
     // tear down and gracefully exit    
-
+    std::cout << "Exiting dgpsBase application..." << std::endl;
     return 0;
 }
