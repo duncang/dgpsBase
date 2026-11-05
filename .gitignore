@@ -1,3 +1,4 @@
 *.bkp
 build/
 .vscode/
+*.code-workspace
