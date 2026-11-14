@@ -59,7 +59,12 @@ The application shall accept program arguments for selection of the configuratio
 
 The application shall accept program arguments for enabling of the control socket interface.
 
-The application shall log application execution information using the log4cxx framework. 
+The application shall use ROS 2 logging through `rclcpp`. By default, ROS 2
+writes logs to the console and `~/.ros/log`, without requiring a ROS master.
+Set `ROS_LOG_DIR` to choose a different directory, or pass ROS logging options
+after `--ros-args`, for example:
+
+    ROS_LOG_DIR=/var/log/dgpsBase DGPSBaseStation --device /dev/ttyUSB1 --ros-args --log-level info
 
 
 DGPS Correction Generation

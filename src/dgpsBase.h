@@ -1,8 +1,9 @@
 #include <boost/asio/io_context.hpp>
 #include <boost/asio/serial_port.hpp>
+#include <rclcpp/rclcpp.hpp>
 #include <string>
 
-class dgpsBase
+class dgpsBase : public rclcpp::Node
 {
 
     public:

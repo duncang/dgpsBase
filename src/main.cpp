@@ -2,13 +2,20 @@
 
 #include "dgpsBase.h"
 
+#include <rclcpp/utilities.hpp>
+
 #include <exception>
 #include <iostream>
+#include <memory>
 #include <string>
+#include <vector>
 
 int main(int argc, char* argv[])
 {
     namespace po = boost::program_options;
+
+    rclcpp::init(argc, argv);
+    const auto logger = rclcpp::get_logger("dgps_base");
 
     po::options_description options("Options");
     options.add_options()
@@ -21,11 +28,19 @@ int main(int argc, char* argv[])
     po::variables_map args;
     try
     {
-        po::store(po::parse_command_line(argc, argv, options), args);
+        const auto unfiltered_args = rclcpp::remove_ros_arguments(argc, argv);
+        std::vector<std::string> app_args;
+        if (unfiltered_args.size() > 1)
+        {
+            app_args.assign(unfiltered_args.begin() + 1, unfiltered_args.end());
+        }
+        po::store(po::command_line_parser(app_args).options(options).run(),
+                  args);
 
         if (args.count("help"))
         {
             std::cout << options << '\n';
+            rclcpp::shutdown();
             return 0;
         }
 
@@ -33,8 +48,9 @@ int main(int argc, char* argv[])
     }
     catch (const po::error& e)
     {
-        std::cerr << "Argument error: " << e.what() << "\n\n"
-                  << options << '\n';
+        RCLCPP_ERROR(logger, "Argument error: %s", e.what());
+        std::cerr << options << '\n';
+        rclcpp::shutdown();
         return 2;
     }
 
@@ -42,37 +58,25 @@ int main(int argc, char* argv[])
     const auto baud = args["baud"].as<unsigned int>();
     if (baud == 0)
     {
-        std::cerr << "Baud rate must be greater than zero.\n";
+        RCLCPP_ERROR(logger, "Baud rate must be greater than zero");
+        rclcpp::shutdown();
         return 2;
     }
 
-    std::cout << "Starting dgpsBase application..." << std::endl;
-
-    // setup logging
-
-    // load and process configuration
-
-    // setup signal handling
-
-    // setup control API
-
-    // setup ROS connection
-
-    // setup dgpsBase Constructor and pass ROS connection
+    RCLCPP_INFO(logger, "Starting DGPS base station");
     try
     {
-        dgpsBase dgpsBase(device, baud);
-
-        // run application main thread
-
-        // tear down and gracefully exit
-        std::cout << "Exiting dgpsBase application..." << std::endl;
+        auto node = std::make_shared<dgpsBase>(device, baud);
+        rclcpp::spin(node);
+        RCLCPP_INFO(node->get_logger(), "Shutting down DGPS base station");
     }
     catch (const std::exception& e)
     {
-        std::cerr << "Failed to start dgpsBase: " << e.what() << '\n';
+        RCLCPP_FATAL(logger, "DGPS base station failed: %s", e.what());
+        rclcpp::shutdown();
         return 1;
     }
 
+    rclcpp::shutdown();
     return 0;
 }

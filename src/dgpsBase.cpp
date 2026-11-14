@@ -1,28 +1,31 @@
 #include "dgpsBase.h"
 
-#include <iostream>
-
-
 dgpsBase::dgpsBase(const std::string& device, unsigned int baudRate)
-    : _serialPort(_ioContext)
+    : rclcpp::Node("dgps_base"),
+      _serialPort(_ioContext)
 {
-    std::cout << "dgpsBase constructor called." << std::endl;
+    RCLCPP_INFO(get_logger(), "Opening serial port %s at %u baud",
+                device.c_str(), baudRate);
     _serialPort.open(device);
     _serialPort.set_option(
         boost::asio::serial_port_base::baud_rate(baudRate));
+    RCLCPP_INFO(get_logger(), "Serial port opened");
 }
 
 dgpsBase::~dgpsBase()
 {
-    std::cout << "dgpsBase destructor called." << std::endl;
     if (_serialPort.is_open())
     {
         boost::system::error_code error;
         _serialPort.close(error);
         if (error)
         {
-            std::cerr << "Failed to close serial port: "
-                      << error.message() << '\n';
+            RCLCPP_ERROR(get_logger(), "Failed to close serial port: %s",
+                         error.message().c_str());
+        }
+        else
+        {
+            RCLCPP_INFO(get_logger(), "Serial port closed");
         }
     }
 }
