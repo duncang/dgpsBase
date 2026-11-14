@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(DGPSBase)
+cmake_policy(SET CMP0167 NEW)
 
 find_package(Boost REQUIRED COMPONENTS system asio)
 
