@@ -4,6 +4,13 @@ DGPS Base Station Processor
 
 Developed by Duncan Greer <duncangreer@gmail.com>
 
+Command Line
+
+The serial device is required via `--device`; the baud rate defaults to `9600`.
+Use `--help` to list the available options.
+
+    DGPSBaseStation --device /dev/ttyUSB1 --baud 115200
+
 Overview
 
 This application processes raw measurements from at least one GPS reference station receivers and produces DGPS corrections.

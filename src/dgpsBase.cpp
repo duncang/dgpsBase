@@ -3,28 +3,17 @@
 #include <iostream>
 
 
-dgpsBase::dgpsBase()
+dgpsBase::dgpsBase(const std::string& device, unsigned int baudRate)
+    : _serialPort(_ioContext)
 {
-    std::cout << "dgpsBase constructor called." << std::endl;    
-
-
-    try
-    {        
-        // initialise serial port
-        _ioContext = new boost::asio::io_context();
-        _serialPort = new boost::asio::serial_port(*_ioContext, "/dev/ttyUSB0"); 
-    } 
-    catch (std::exception& e)
-    {
-        std::cerr << "Exception in dgpsBase constructor: " << e.what() << std::endl;
-
-        //delete _serialPort;
-        delete _ioContext;
-    }
+    std::cout << "dgpsBase constructor called." << std::endl;
+    _serialPort.open(device);
+    _serialPort.set_option(
+        boost::asio::serial_port_base::baud_rate(baudRate));
 }
 
 dgpsBase::~dgpsBase()
 {
-    std::cout << "dgpsBase destructor called." << std::endl;    
+    std::cout << "dgpsBase destructor called." << std::endl;
 }
 
