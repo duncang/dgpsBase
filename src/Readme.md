@@ -11,6 +11,20 @@ Use `--help` to list the available options.
 
     DGPSBaseStation --device /dev/ttyUSB1 --baud 115200
 
+Docker Build
+
+The Docker image uses ROS 2 Lyrical. Build it from the repository root:
+
+    docker build -t dgps-base:lyrical .
+
+Run the application with the serial device passed through to the container:
+
+    docker run --rm --device=/dev/ttyUSB1 dgps-base:lyrical --device /dev/ttyUSB1 --baud 115200
+
+For ROS 2 communication with other containers on Linux, use the same ROS
+domain ID and consider adding `--network host` to the `docker run` command so
+DDS discovery can reach the other ROS nodes.
+
 Overview
 
 This application processes raw measurements from at least one GPS reference station receivers and produces DGPS corrections.
