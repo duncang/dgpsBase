@@ -4,7 +4,6 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y \
         build-essential \
         cmake \
-        libboost-asio-dev \
         libboost-program-options-dev \
         libboost-system-dev \
     && rm -rf /var/lib/apt/lists/*

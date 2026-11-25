@@ -5,7 +5,7 @@ if(POLICY CMP0167)
     cmake_policy(SET CMP0167 NEW)
 endif()
 
-find_package(Boost REQUIRED COMPONENTS system asio program_options)
+find_package(Boost REQUIRED COMPONENTS program_options)
 find_package(rclcpp REQUIRED)
 
 add_executable(DGPSBaseStation)
@@ -18,8 +18,6 @@ target_sources(DGPSBaseStation PRIVATE
 )
 
 target_link_libraries(DGPSBaseStation PRIVATE
-    Boost::system
-    Boost::asio
     Boost::program_options
     rclcpp::rclcpp
 )
